@@ -23,6 +23,10 @@ def _split_pdf_by_page_count(file_path, max_pages=299):
             writer.add_page(reader.pages[j])
 
         split_file_path = f"{file_path}_part_{i // max_pages + 1}.pdf"
+
+        if os.path.exists(split_file_path):
+            os.remove(split_file_path)
+
         with open(split_file_path, 'wb') as f:
             writer.write(f)
 
@@ -54,6 +58,10 @@ def split_pdf_by_size(file_path, max_size_mb=9.5):
 
         if (os.path.getsize(temp_file_path) / (1024 * 1024) > max_size_mb) or (i == len(reader.pages) - 1):
             final_file_path = f"{base_name}_part_{len(split_files) + 1}.pdf"
+
+            if os.path.exists(final_file_path):
+                os.remove(final_file_path)
+
             os.rename(temp_file_path, final_file_path)
             split_files.append(final_file_path)
             writer = PdfWriter()

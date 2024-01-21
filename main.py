@@ -3,8 +3,7 @@ import run_translation
 
 def main():
     file_paths = [
-        r"D:\OneDrive - UNIVERSITAS INDONESIA\Documents\KULIAH\Book\Introduction to information retrieval 2009.pdf",
-        r"D:\OneDrive - UNIVERSITAS INDONESIA\Documents\KULIAH\Book\Recommender Systems The Textbook.pdf",
+        r"tes"
         # add more files here
     ]
 
