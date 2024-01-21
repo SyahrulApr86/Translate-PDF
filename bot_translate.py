@@ -22,12 +22,10 @@ def create_download_directory(file_path):
     return download_dir
 
 
-def initialize_undetected_chrome(download_dir, headless=True):
+def initialize_undetected_chrome(download_dir):
     """Initialize the undetected Chrome webdriver with a specified download directory."""
     options = uc.ChromeOptions()
-
-    if headless:
-        options.add_argument('--headless')
+    options.add_argument('--headless')
 
     prefs = {
         "download.default_directory": download_dir,
@@ -99,5 +97,5 @@ def translate(file_path, driver):
 if __name__ == "__main__":
     file_path = r"test.pdf"
     download_dir = create_download_directory(file_path)
-    driver = initialize_undetected_chrome(headless=False, download_dir=download_dir)
+    driver = initialize_undetected_chrome(download_dir=download_dir)
     translate(file_path, driver)

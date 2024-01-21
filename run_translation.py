@@ -119,7 +119,7 @@ def translate_file(file_path):
     split_files = split_pdf_if_needed(file_path)
     print("Split files:", split_files)
 
-    driver = bot_translate.initialize_undetected_chrome(headless=False, download_dir=download_path)
+    driver = bot_translate.initialize_undetected_chrome(download_dir=download_path)
     translated_files_path = ""
 
     base_name, ext = os.path.splitext(os.path.basename(file_path))
