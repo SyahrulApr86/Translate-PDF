@@ -25,7 +25,6 @@ def create_download_directory(file_path):
 def initialize_undetected_chrome(download_dir):
     """Initialize the undetected Chrome webdriver with a specified download directory."""
     options = uc.ChromeOptions()
-    options.add_argument('--headless')
 
     prefs = {
         "download.default_directory": download_dir,
