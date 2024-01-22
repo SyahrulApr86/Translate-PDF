@@ -14,6 +14,8 @@ This automation tool is designed for translating large or lengthy PDF documents 
 - PyPDF2.
 - undetected_chromedriver.
 
+(Just run `pip install -r requirements.txt` to install all dependencies.)
+
 ## Installation
 Before running the script, ensure all dependencies are installed. Install them using the provided `requirements.txt` file:
 
